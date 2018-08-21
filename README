@@ -1,0 +1,3 @@
+To build:
+Run 'yarn install' then run 'yarn build'.
+Then the distribution folder should appear with the compiled code.

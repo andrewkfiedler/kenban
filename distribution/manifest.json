@@ -2,7 +2,7 @@
 
     "manifest_version": 2,
     "name": "Kenban",
-    "version": "1.0",
+    "version": "1.1",
   
     "description": "Adds some keyboard accesibility to Wanikani reviews.  Coming soon for lessons as well (I don't have any lessons to test on yet!).",
   
