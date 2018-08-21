@@ -1,5 +1,6 @@
 import './index.scss';
-setTimeout(() => {
+
+function decorateThePage() {
     document.querySelectorAll('#additional-content li, #all-info').forEach((element) => {
         element.tabIndex = 0;
         element.onkeydown = (e) => {
@@ -20,4 +21,16 @@ setTimeout(() => {
         } 
     })
     document.querySelector('.audio-btn').tabIndex = '-1';  // can already select the li now
-}, 1000);
+}
+
+function waitForPageLoad() {
+    if (document.querySelectorAll('#information').length === 0) {
+        setTimeout(() => {
+            waitForPageLoad();
+        }, 1000);
+    } else {
+        decorateThePage();
+    }
+}
+
+waitForPageLoad();
