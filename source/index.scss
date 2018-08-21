@@ -1,0 +1,24 @@
+button:focus,
+li:focus,
+#all-info:focus,
+a:focus {
+  outline-color: transparent;
+  > span,
+  > i {
+    position: relative;
+  }
+  > i:after,
+  > span:after {
+    content: '';
+    opacity: .3;
+    background: #294ddb;
+    width: 41px;
+    height: 41px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
