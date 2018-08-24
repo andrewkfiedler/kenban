@@ -1,24 +1,87 @@
-button:focus,
-li:focus,
-#all-info:focus,
-a:focus {
-  outline-color: transparent;
-  > span,
-  > i {
+@mixin hotKeyBox() {
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 1px 4px;
+  border: 1px solid #3c3c3c;
+  border-radius: 1px;
+  -webkit-box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  -moz-box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+
+
+#option-last-items {
+  i {
     position: relative;
   }
-  > i:after,
-  > span:after {
-    content: '';
-    opacity: .3;
-    background: #294ddb;
-    width: 41px;
-    height: 41px;
+  i:after {
+    @include hotKeyBox();
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    border-radius: 50%;
-    z-index: 1;
+    left: 20px;
+    top: -33px;
+    color: #294ddb;
+    opacity: .5;
+    content: ',';
+    font-size: 45px;
   }
+}
+
+#option-item-info {
+  .icon-eye-open {
+    position: relative;
+  }
+  .icon-eye-open:after {
+    @include hotKeyBox();
+    position: absolute;
+    left: 20px;
+    top: -1px;
+    color: #294ddb;
+    opacity: .5;
+    content: 'F';
+  }
+}
+
+#option-kana-chart {
+  .icon-hkana-list {
+    position: relative;
+  }
+  .icon-hkana-list:after {
+    @include hotKeyBox();
+    position: absolute;
+    left: 23px;
+    top: 1px;
+    color: #294ddb;
+    opacity: .5;
+    content: '';
+    border-right: 3px solid #294ddb;
+    height: 15px;
+    width: 0px;
+    transform: rotate(30deg);
+  }
+}
+
+#option-audio {
+  button {
+    position: relative;
+  }
+  button:after {
+    position: absolute;
+    left: 20px;
+    top: -1px;
+    color: #294ddb;
+    opacity: .5;
+    content: 'J';
+    @include hotKeyBox();
+  }
+}
+
+#all-info {
+  position: relative;
+}
+#all-info::after {
+  content: 'SPACEBAR';
+  position: absolute;
+  left: calc(50% + 87px);
+  top: 50%;
+  transform: translateY(-50%);
+  @include hotKeyBox();
 }
