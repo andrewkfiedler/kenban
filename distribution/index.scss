@@ -1,4 +1,4 @@
-@mixin hotKeyBox() {
+@mixin hotKeyBox($width: 10px) {
   font-family: "Source Sans Pro", sans-serif;
   padding: 1px 4px;
   border: 1px solid #3c3c3c;
@@ -6,71 +6,49 @@
   -webkit-box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
   -moz-box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
   box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  position: absolute;
+  color: #294ddb;
+  width: $width;
+  opacity: .4;
+}
+
+#option-last-items,
+#option-item-info,
+#option-kana-chart,
+#option-audio {
+  i, button {
+    position: relative;
+  }
+  i:after, button:after {
+    @include hotKeyBox();
+    left: 26px;
+    top: -4px;
+  }
 }
 
 
 #option-last-items {
-  i {
-    position: relative;
-  }
   i:after {
-    @include hotKeyBox();
-    position: absolute;
-    left: 20px;
-    top: -33px;
-    color: #294ddb;
-    opacity: .5;
     content: ',';
-    font-size: 45px;
   }
 }
 
 #option-item-info {
-  .icon-eye-open {
-    position: relative;
-  }
-  .icon-eye-open:after {
-    @include hotKeyBox();
-    position: absolute;
-    left: 20px;
-    top: -1px;
-    color: #294ddb;
-    opacity: .5;
+  i:after {
     content: 'F';
   }
 }
 
 #option-kana-chart {
-  .icon-hkana-list {
-    position: relative;
-  }
-  .icon-hkana-list:after {
-    @include hotKeyBox();
-    position: absolute;
-    left: 23px;
-    top: 1px;
-    color: #294ddb;
-    opacity: .5;
-    content: '';
-    border-right: 3px solid #294ddb;
-    height: 15px;
-    width: 0px;
-    transform: rotate(30deg);
+  i:after {
+    content: '/';
   }
 }
 
 #option-audio {
-  button {
-    position: relative;
-  }
   button:after {
-    position: absolute;
-    left: 20px;
-    top: -1px;
-    color: #294ddb;
-    opacity: .5;
+    left: 17px;
     content: 'J';
-    @include hotKeyBox();
   }
 }
 
@@ -83,5 +61,5 @@
   left: calc(50% + 87px);
   top: 50%;
   transform: translateY(-50%);
-  @include hotKeyBox();
+  @include hotKeyBox(auto);
 }
