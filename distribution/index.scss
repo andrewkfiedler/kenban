@@ -56,10 +56,10 @@
   position: relative;
 }
 #all-info::after {
+  @include hotKeyBox(auto);
   content: 'SPACEBAR';
   position: absolute;
   left: calc(50% + 87px);
   top: 50%;
   transform: translateY(-50%);
-  @include hotKeyBox(auto);
 }
