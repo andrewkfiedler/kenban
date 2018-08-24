@@ -53,6 +53,7 @@ module.exports = () => ({
 ],
   optimization: {
     // Without this, function names will be garbled and enableFeature won't work
-    concatenateModules: true
+    concatenateModules: true,
+    minimize: false
   }
 })
